@@ -29,6 +29,10 @@ I have used terraform as an Infrastructure as code (IaC) tool to provision my in
 2. An Ubuntu server with Docker installed
 3. A Docker container with nginx container hosted by the ubuntu server
 
+This is the full configuration from https://registry.terraform.io/providers/hashicorp/aws/latest/docs
+See that guide for additional information.
+
+Provision Infrastructure on AWS using Terraform:terraform init terraform plan terraform apply terraform destory
 Steps taken:
 1. Define Provider
 
