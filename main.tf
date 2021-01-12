@@ -1,5 +1,4 @@
 # Provider Configuration
-#
 
 provider "aws" {
   region  = "us-east-1"
@@ -15,7 +14,7 @@ provider "aws" {
   tags = {
     Name = "keet"
   }
-  }
+}
 #2. Create Internet Gateway
 resource "aws_internet_gateway" "gw" {
   vpc_id = aws_vpc.keet-vpc.id}
@@ -64,7 +63,7 @@ resource "aws_security_group" "allow_web" {
     to_port     =  443
     protocol    =  "tcp"
     cidr_block  =  "0.0.0.0/0"
-}
+  }
   ingress {
     description = "ssh web traffic from anywhere"
     from_port   =  22
@@ -129,9 +128,9 @@ resource "docker_container" "nginx-server" {
   }
   output "instance_ips" {
   value = aws_instance.web.*.public_ip
-}
+  
 
 output "instance_ip_addr" {
   value = aws_instance.server.private_ip
-} 
+  } 
 }
